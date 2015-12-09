@@ -3,8 +3,8 @@
 :- use_module(library(clpfd)).
 :- use_module(library(samsort)).
 
-config_file('/Users/veryc/Desktop/PLOP/TP2(git)/PLOG/config.pl').
-%config_file('/Users/Eduardo Reis/Documents/PLOG/PLOG/config.pl').
+%config_file('/Users/veryc/Desktop/PLOP/TP2(git)/PLOG/config.pl').
+config_file('/Users/Eduardo Reis/Documents/PLOG/PLOG/config.pl').
 
 read_config :-
     config_file(F),
@@ -42,5 +42,5 @@ teste :-
     %nl,
    	%write('Preco: '), write(Preco),
     %nl.
-    lista([H|T]),
-    write(X). 
+        preparareceitas(Sopa1),
+        write(Sopa1).

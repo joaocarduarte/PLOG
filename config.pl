@@ -1,3 +1,4 @@
+
 %% prato(preco,quantidade)
 %sopa(5,10).
 %prato(5,5).
@@ -22,5 +23,10 @@ arroz(40, 200).
 %append([], [batata(X,Y), marisco(X,Y), agua(X,Y)], Sopa5).
 
 
-lista(Lista) :- 
-	append([],[batata(50,200), arroz(50,200)], Lista).
+prepareIngredients(Batata) :- 
+        batata(X,Y),
+	append([],[X,Y],Batata).
+
+preparareceitas(Sopa1) :-
+        prepareIngredients(Batata),
+        append([], Batata, Sopa1).
