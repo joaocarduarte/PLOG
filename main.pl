@@ -3,8 +3,8 @@
 :- use_module(library(clpfd)).
 :- use_module(library(samsort)).
 
-%config_file('/Users/veryc/Desktop/PLOP/TP2(git)/PLOG/config.pl').
-config_file('/Users/Eduardo Reis/Documents/PLOG/PLOG/config.pl').
+config_file('/Users/veryc/Desktop/PLOP/TP2(git)/PLOG/config.pl').
+%config_file('/Users/Eduardo Reis/Documents/PLOG/PLOG/config.pl').
 
 read_config :-
     config_file(F),
@@ -31,14 +31,16 @@ listas(ListPreco) :-
 
 mais_barato(Lista, W) :-
 	samsort(Lista, [X|Y]),
-        append([],X, W).
+    append([],X, W).
         
 	
 teste :-
 	read_config,
-	listas(ListPreco),
-	mais_barato(ListPreco, [Preco|[Quantidade|Y]]),
-        write('Quantidade: '), write(Quantidade),
-        nl,
-        write('Preco: '), write(Preco),
-        nl.
+	%listas(ListPreco),
+	%mais_barato(ListPreco, [Preco|[Quantidade|Y]]),
+    %write('Quantidade: '), write(Quantidade),
+    %nl,
+   	%write('Preco: '), write(Preco),
+    %nl.
+    lista([H|T]),
+    write(X). 
