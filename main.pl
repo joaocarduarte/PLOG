@@ -42,5 +42,9 @@ teste :-
     %nl,
    	%write('Preco: '), write(Preco),
     %nl.
-        preparareceitas(Sopa1),
-        write(Sopa1).
+        sopa1(X),
+        call(X, Z, Y),
+        write(Z),
+        nl,
+        write(Y),
+        nl.

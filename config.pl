@@ -13,7 +13,7 @@ arroz(40, 200).
 %marisco(120, 300).
 %frango(150, 300).
 
-%sopa1(batata(50,200),arroz(C,V)).
+sopa1(batata).
 
 %%Sopas  				mais tarde fazer sopa(lista, preco, quantidade)
 %append([], [batata(50,200), arroz(40,200), agua(1,500)], Sopa1).
@@ -22,11 +22,3 @@ arroz(40, 200).
 %append([], [batata(X,Y), frango(X,Y), agua(X,Y)], Sopa4).
 %append([], [batata(X,Y), marisco(X,Y), agua(X,Y)], Sopa5).
 
-
-prepareIngredients(Batata) :- 
-        batata(X,Y),
-	append([],[X,Y],Batata).
-
-preparareceitas(Sopa1) :-
-        prepareIngredients(Batata),
-        append([], Batata, Sopa1).
