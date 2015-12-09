@@ -3,7 +3,8 @@
 :- use_module(library(clpfd)).
 :- use_module(library(samsort)).
 
-config_file('/Users/veryc/Desktop/PLOP/TP2(git)/PLOG/config.pl').
+%config_file('/Users/veryc/Desktop/PLOP/TP2(git)/PLOG/config.pl').
+config_file('/Users/Eduardo Reis/Documents/PLOG/PLOG/config.pl').
 
 read_config :-
     config_file(F),
@@ -20,21 +21,24 @@ read_file(Stream, [X|L]) :-
     read_file(Stream, L).
 
 listas(ListPreco) :- 
-	sopa(A,P1),
-	prato(B,P2),
-	sobremesa(C,P3),
-	append([], [P1, P2, P3], ListPreco).
+	sopa(P1, A),
+        append([],[P1,A], Sopa),
+	prato(P2, B),
+        append([],[P2,B], Prato),
+	sobremesa(P3, C),
+        append([],[P3,C], Sobremesa),
+	append([], [Sopa, Prato, Sobremesa], ListPreco).
 
-mais_baratinho(Lista, W) :-
+mais_barato(Lista, W) :-
 	samsort(Lista, [X|Y]),
-	W is X.
+        append([],X, W).
+        
 	
-
-teste(Zero, X) :-
-	
-
 teste :-
 	read_config,
 	listas(ListPreco),
-	mais_baratinho(ListPreco, W),
-	write(W).
+	mais_barato(ListPreco, [Preco|[Quantidade|Y]]),
+        write('Quantidade: '), write(Quantidade),
+        nl,
+        write('Preco: '), write(Preco),
+        nl.
