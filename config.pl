@@ -7,18 +7,16 @@
 %%Ingredientes(preco, quantidade)
 batata(50, 200).
 arroz(40, 200).
-%massa(40,200).
-%agua(1, 500).
-%couve(20, 100).
-%marisco(120, 300).
-%frango(150, 300).
+massa(40,200).
+agua(1, 500).
+couve(20, 100).
+marisco(120, 300).
+frango(150, 300).
 
-sopa1(batata).
 
-%%Sopas  				mais tarde fazer sopa(lista, preco, quantidade)
-%append([], [batata(50,200), arroz(40,200), agua(1,500)], Sopa1).
-%append([], [batata(X,Y), massa(X,Y), agua(X,Y)], Sopa2).
-%append([], [batata(X,Y), couve(X,Y), agua(X,Y)], Sopa3).
-%append([], [batata(X,Y), frango(X,Y), agua(X,Y)], Sopa4).
-%append([], [batata(X,Y), marisco(X,Y), agua(X,Y)], Sopa5).
-
+%%Sopas--------------mais tarde fazer sopa(lista, preco, quantidade)
+sopa1([ batata, arroz, agua]).
+sopa2([ batata, massa, agua]).
+sopa3([ batata, couve, agua]).
+sopa5([ batata, frango, agua]).
+sopa5([ batata, marisco, agua]).
