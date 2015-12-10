@@ -34,6 +34,7 @@ mais_barato(Lista, W) :-
     append([],X, W).
 
 
+
 preco_receita(List, PrecoT) :-
     preco_receita(List, 0, PrecoT).
 
@@ -42,6 +43,17 @@ preco_receita([], Acomulador, Acomulador).
 preco_receita([H|T], Acomulador, Resultado) :-
 	call(H, X, Y),
     Acomulador1 is Acomulador + X,
+    preco_receita(T, Acomulador1, Resultado).
+
+
+quantidade_receita(List, QuantidadeT) :-
+    quantidade_receita(List, 0, QuantidadeT).
+
+quantidade_receita([], Acomulador, Acomulador).
+
+quantidade_receita([H|T], Acomulador, Resultado) :-
+	call(H, X, Y),
+    Acomulador1 is Acomulador + Y,
     preco_receita(T, Acomulador1, Resultado).
 
 	
