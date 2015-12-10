@@ -3,8 +3,8 @@
 :- use_module(library(clpfd)).
 :- use_module(library(samsort)).
 
-%config_file('/Users/veryc/Desktop/PLOP/TP2(git)/PLOG/config.pl').
-config_file('/Users/Eduardo Reis/Documents/PLOG/PLOG/config.pl').
+config_file('/Users/veryc/Desktop/PLOP/TP2(git)/PLOG/config.pl').
+%config_file('/Users/Eduardo Reis/Documents/PLOG/PLOG/config.pl').
 
 read_config :-
     config_file(F),
@@ -32,6 +32,19 @@ listas(ListPreco) :-
 mais_barato(Lista, W) :-
 	samsort(Lista, [X|Y]),
     append([],X, W).
+
+
+preco_receita(List, PrecoT) :-
+    preco_receita(List, 0, PrecoT).
+
+preco_receita([], Acomulador, Acomulador).
+
+preco_receita([H|T], Acomulador, Resultado) :-
+	call(H, X, Y),
+    Acomulador1 is Acomulador + X,
+    preco_receita(T, Acomulador1, Resultado).
+
+	
         
 	
 teste :-
@@ -42,9 +55,6 @@ teste :-
     %nl,
    	%write('Preco: '), write(Preco),
     %nl.
-        sopa1(X),
-        call(X, Z, Y),
-        write(Z),
-        nl,
-        write(Y),
-        nl.
+    	sopa1(Lista),
+        preco_receita(Lista, Preco),
+        write(Preco).
