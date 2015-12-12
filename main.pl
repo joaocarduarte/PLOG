@@ -3,8 +3,7 @@
 :- use_module(library(clpfd)).
 :- use_module(library(samsort)).
 
-config_file('/Users/veryc/Desktop/PLOP/TP2(git)/PLOG/config.pl').
-%config_file('/Users/Eduardo Reis/Documents/PLOG/PLOG/config.pl').
+:- include('config.pl').
 
 read_config :-
     config_file(F),
@@ -61,12 +60,90 @@ quantidade_receita([H|T], Acomulador, Resultado) :-
 	
 teste :-
 	read_config,
-	%listas(ListPreco),
+	listas(ListPreco),
+        Sopas  = [Sopa1, Sopa2, Sopa3],
+        Sopas2 = [Cenas, Ca],
+        append([Sopas], [Sopas2], Ba),
+        length(Ba, 3),
+        write(Ba).
 	%mais_barato(ListPreco, [Preco|[Quantidade|Y]]),
+        %write(Preco),
+        %labeling([max, Cenas], [5,10,14]).
     %write('Quantidade: '), write(Quantidade),
     %nl,
    	%write('Preco: '), write(Preco),
     %nl.
-    	sopa1(Lista),
-        preco_receita(Lista, Preco),
-        write(Preco).
+    	%sopa1(Lista),
+        %preco_receita(Lista, Preco),
+        %append([[100,1]], [[Preco,2]], ListaPrecos),
+        %samsort(ListaPrecos,ListaPrecos1),
+        %write(ListaPrecos1),
+       
+        
+        %VariedadesSopa =[Sopa1, Sopa2, Sopa3],
+        %domain(VariedadesSopa, 1, 3),
+        %Sopa1 #= Sopa2,
+        %Sopa3 #> Sopa2,
+        %append([], [NumeroVariedadesSopas], Teste),
+        %labeling([], VariedadesSopa),
+        %write(VariedadesSopa).
+
+
+send :-
+        Vars=[S,E,N,D,M,O,R,Y],
+        domain(Vars,0,9),
+        all_different(Vars),
+        S #\= 0, M #\= 0,
+        S*1000+E*100+N*10+D +
+        M*1000+O*100+R*10+E #=
+        M*10000+O*1000+N*100+E*10+Y,
+        labeling([],Vars),
+        write(Vars).
+        
+
+meal :-
+        getIngredientsSopa(ListaIngredientes, Batata, Couve, Alface, Lista),
+        Vars = [Id, R],
+        domain(Vars,0,9),
+        %element(Index, Lista, R),
+        getPrice(R,P),
+        labeling([minimize(P), minimize(R)],Vars),
+        write(Vars).
+
+getPrice(R,P):-
+        R is 2,
+        batata(X,Y),
+        P = X.
+
+getPrice(R,P):-
+        R is 1,
+        agua(X,Y),
+        P = X.
+
+getElement([H|T], Contador, Index, Resultado) :-
+        Contador == Index,
+        Resultado = H.
+
+getElement([H|T], Contador, Index, Resultado) :-
+        Contador \= Index,
+        Contador1 is Contador +1,
+        getElement(T,Contador1,Index,Resultado).
+
+getElement(Lista, 0, Index, Resultado) :-
+        getElement(Lista,1,Index,Resultado).
+
+getElement([H|T], Contador, Index, Resultado) :-
+        Resultado == H,
+        Index = Contador.
+        
+getElement([H|T], Contador, Index, Resultado) :-
+        Resultado \= H,
+        Contador1 is Contador +1,
+        getElement(T,Contador1,Index,Resultado).
+
+
+           
+
+
+                  
+        
