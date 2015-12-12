@@ -107,6 +107,7 @@ meal :-
         domain([Id,R],1,9),
         %element(Index, Lista, R),
         element(Index,Lista,Result),
+        Lista1=[Index],
         labeling([minimize(Result)],Vars),
         write(Vars).
 
@@ -131,9 +132,38 @@ getElement([H|T], Contador, Index, Resultado) :-
         Contador1 is Contador +1,
         getElement(T,Contador1,Index,Resultado).
 
+pratos :-
+        getListasIngredientes(ListaPrecos,ListaQuantidades),
+        Vars = [PratoPrincipalMain, PratoPrincipalAcompanhamento, Pao],
+        append(Vars,ListaFrutas,Vars2),
+        pratoPrincipalMain(ListaPrecos,PratoPrincipalMain,PrecoMain,ListaQuantidades),
+        pratoPrincipalAcompanhamento(ListaPrecos, PratoPrincipalAcompanhamento,PrecoAcompanhamento,ListaQuantidades),
+        pao(ListaPrecos, Pao, PrecoPao, ListaQuantidades),
+        fruta(ListaPrecos,ListaFrutas,PrecoFruta,ListaQuantidades),
+        Preco #= PrecoPao + PrecoAcompanhamento + PrecoMain + PrecoFruta,
+        labeling([minimize(Preco)],Vars2),
+        write(Vars2).
+        %write(PrecoFruta1).
 
-           
+pratoPrincipalMain(ListaPrecos, Index, Preco, ListaQuantidades):-
+         domain([Index], 9, 10),
+         element(Index, ListaPrecos, Preco).
 
+pratoPrincipalAcompanhamento(ListaPrecos, Index, Preco, ListaQuantidades) :-
+        domain([Index], 5, 6),
+        element(Index, ListaPrecos, Preco).
+    
+pao(ListaPrecos, Index, Preco, ListaQuantidades) :-
+        domain([Index], 11, 13),
+        element(Index, ListaPrecos,Preco).  
 
+fruta(ListaPrecos,ListaFrutas,Preco,ListaQuantidades) :-
+        ListaFrutas = [I1,I2,I3],
+        domain(ListaFrutas, 14, 17),
+        all_different(ListaFrutas),
+        element(I1,ListaPrecos,Preco1),
+        element(I2,ListaPrecos,Preco2),
+        element(I3,ListaPrecos,Preco3),
+        Preco #= Preco1 + Preco2 + Preco3.
                   
         
