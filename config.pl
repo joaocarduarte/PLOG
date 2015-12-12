@@ -72,21 +72,21 @@ iogurte(1,200).          %51
 numerorefeicoesdiarias(200).
 
 getListasIngredientes(ListaPrecos,ListaQuantidades) :-
-        batata(P1, Q1),         %1
-        favas(P2,Q2),           %2
-        feijao(P3,Q3),          %3
-        grao(P4,Q4),            %4
-        cenoura(P5,Q5),         %5
-        curgete(P6,Q6),         %6
-        abobora(P7,Q7),         %7
+        batata(P1, Q1),            %1
+        favas(P2,Q2),              %2
+        feijao(P3,Q3),             %3
+        grao(P4,Q4),               %4
+        cenoura(P5,Q5),            %5
+        curgete(P6,Q6),            %6
+        abobora(P7,Q7),            %7
         
         %legumes
-        alhofrances(P8,Q8),     %8       
-        feijaoVerde(P9,Q9),     %9
+        alhofrances(P8,Q8),        %8       
+        feijaoVerde(P9,Q9),        %9
         espinafre(P10,Q10),        %10
-        couve(P11,Q11),           %11
-        broculos(P12,Q12),        %12
-        ervilhas(P13,Q13),        %13
+        couve(P11,Q11),            %11
+        broculos(P12,Q12),         %12
+        ervilhas(P13,Q13),         %13
         
         tomate(P14,Q14),           %14
         alface(P15,Q15),           %15
@@ -96,31 +96,31 @@ getListasIngredientes(ListaPrecos,ListaQuantidades) :-
         couveRouxa(P19,Q19),       %19
         beterraba(P20,Q20),        %20
         
-        arroz(P21, Q21),          %21
-        massa(P22,Q22),           %22
-        cuscuz(P23,Q23),          %23
-        
+        arroz(P21, Q21),           %21
+        massa(P22,Q22),            %22
+        cuscuz(P23,Q23),           %23
+         
         %carne
-        porco(P24,Q24),           %24
-        frango(P25,Q25),         %25
-        pato(P26,Q26),            %26
-        peru(P27,Q27),            %27
-        vitela(P28,Q28),          %28
+        porco(P24,Q24),            %24
+        frango(P25,Q25),           %25
+        pato(P26,Q26),             %26
+        peru(P27,Q27),             %27
+        vitela(P28,Q28),           %28
         
         %peixe
-        carapau(P29,Q29),         %29
-        salmao(P30,Q30),          %30
-        pescada(P31,Q31),         %31
-        dourada(P32,Q32),         %32
-        solha(P33,Q33),           %33
+        carapau(P29,Q29),          %29
+        salmao(P30,Q30),           %30
+        pescada(P31,Q31),          %31
+        dourada(P32,Q32),          %32
+        solha(P33,Q33),            %33
         
         %pao
-        paoMistura(P34,Q34),      %34
+        paoMistura(P34,Q34),       %34
         paoTrigo(P35,Q35),         %35
         paoCenteio(P36,Q36),       %36
         
         %fruta
-        banana(P37,Q37),          %37
+        banana(P37,Q37),           %37
         laranja(P38,Q38),          %38
         pera(P39,Q39),             %39
         maca(P40,Q40),             %40
