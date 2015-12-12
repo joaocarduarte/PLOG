@@ -103,22 +103,12 @@ send :-
 
 meal :-
         getIngredientsSopa(ListaIngredientes, Batata, Couve, Alface, Lista),
-        Vars = [Id, R],
-        domain(Vars,0,9),
+        Vars = [Id, R, Result],
+        domain([Id,R],1,9),
         %element(Index, Lista, R),
-        getPrice(R,P),
-        labeling([minimize(P), minimize(R)],Vars),
+        element(Index,Lista,Result),
+        labeling([minimize(Result)],Vars),
         write(Vars).
-
-getPrice(R,P):-
-        R is 2,
-        batata(X,Y),
-        P = X.
-
-getPrice(R,P):-
-        R is 1,
-        agua(X,Y),
-        P = X.
 
 getElement([H|T], Contador, Index, Resultado) :-
         Contador == Index,

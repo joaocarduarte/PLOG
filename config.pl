@@ -32,5 +32,5 @@ getIngredientsSopa(ListaIngredientes, Batata, Couve, Alface, ListaPrecosQuantida
         Couve = couve,
         Alface = alface,
         ListaIngredientes = [Batata, Couve, Alface],
-        ListaPrecosQuantidades = [0, 1, 2].
+        ListaPrecosQuantidades = [40, 100, 30].
         
