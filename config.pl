@@ -1,23 +1,24 @@
 %%Ingredientes(preco, quantidade)
 
 %bases da sopa(batata pode ser utilizado como acompanhamento)
-batata(40, 200).         %1
-favas(40,200).           %2
-feijao(40,200).          %3
+batata(1, 200).         %1
+favas(40,0).           %2
+feijao(40,0).          %3
 grao(40,200).            %4
 cenoura(40,200).         %5
 curgete(40,200).         %6
 abobora(50,200).         %7
 
 %legumes
-alhofrances(40,200).     %8       
+alhofrances(40,100).     %8       
 feijaoVerde(40,200).     %9
 espinafre(1,200).        %10
 couve(20,200).           %11
 broculos(20,200).        %12
 ervilhas(20,200).        %13
 
-tomate(1,200).           %14
+%legumes crus
+tomate(1,300).           %14
 alface(1,200).           %15
 cebola(1,200).           %16
 rúcula(1,200).           %17
@@ -25,7 +26,8 @@ milho(1,200).            %18
 couveRouxa(1,200).       %19
 beterraba(1,200).        %20
 
-arroz(40, 200).          %21
+%acompanhamentos
+arroz(40, 600).          %21
 massa(30,200).           %22
 cuscuz(20,200).          %23
 
@@ -39,12 +41,12 @@ vitela(12,400).          %28
 %peixe
 carapau(10,200).         %29
 salmao(10,200).          %30
-pescada(10,200).         %31
+pescada(4,200).         %31
 dourada(10,200).         %32
 solha(10,200).           %33
 
 %pao
-paoMistura(10,200).      %34
+paoMistura(10,600).      %34
 paoTrigo(5,200).         %35
 paoCenteio(8,200).       %36
 
