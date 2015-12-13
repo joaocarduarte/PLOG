@@ -1,157 +1,161 @@
-
+%bases da sopa(batata pode ser utilizado como acompanhamento)
 imprimeIngrediente(1):-
                 write('Batata').
 
-
 imprimeIngrediente(2):-
-                write().
+                write('Favas').
 
 imprimeIngrediente(3):-
-                write().
+                write('Feijao').
 
 imprimeIngrediente(4):-
-                write().
+                write('Grao').
 
 imprimeIngrediente(5):-
-                write().
+                write('Cenoura').
 
 imprimeIngrediente(6):-
-                write().
+                write('Curgete').
 
 imprimeIngrediente(7):-
-                write().
+                write('Abobora').
 
+%legumes
 imprimeIngrediente(8):-
-                write().
+                write('Alho Frances').
 
 imprimeIngrediente(9):-
-                write().
+                write('Feijao Verde').
 
 imprimeIngrediente(10):-
-                write().
-
+                write('Espinafre').
 
 imprimeIngrediente(11):-
-                write().
+                write('Couve').
 
 imprimeIngrediente(12):-
-                write().
+                write('Broculo').
 
 imprimeIngrediente(13):-
-                write().
+                write('Ervilhas').
 
 imprimeIngrediente(14):-
-                write().
+                write('Tomate').
 
 imprimeIngrediente(15):-
-                write().
+                write('Alface').
 
 imprimeIngrediente(16):-
-                write().
+                write('Cebola').
 
 imprimeIngrediente(17):-
-                write().
+                write('Rucula').
 
 imprimeIngrediente(18):-
-                write().
+                write('Milho').
 
 imprimeIngrediente(19):-
-                write().
+                write('Couve Roxa').
 
 imprimeIngrediente(20):-
-                write().
+                write('Beterraba').
 
 imprimeIngrediente(21):-
-                write().
+                write('Arroz').
 
 imprimeIngrediente(22):-
-                write().
+                write('Massa').
 
 imprimeIngrediente(23):-
-                write().
+                write('Cuscuz').
 
+%carne
 imprimeIngrediente(24):-
-                write().
+                write('Porco').
 
 imprimeIngrediente(25):-
-                write().
+                write('Frango').
 
 imprimeIngrediente(26):-
-                write().
+                write('Pato').
 
 imprimeIngrediente(27):-
-                write().
+                write('Peru').
 
 imprimeIngrediente(28):-
-                write().
+                write('Vitela').
 
+%peixe
 imprimeIngrediente(29):-
-                write().
+                write('Carapau').
 
 imprimeIngrediente(30):-
-                write().
+                write('Salmao').
 
 imprimeIngrediente(31):-
-                write().
+                write('Pescada').
 
 imprimeIngrediente(32):-
-                write().
+                write('Dourada').
 
 imprimeIngrediente(33):-
-                write().
+                write('Solha').
 
+%pao
 imprimeIngrediente(34):-
-                write().
+                write('Pao de Mistura').
 
 imprimeIngrediente(35):-
-                write().
+                write('Pao de Trigo').
 
 imprimeIngrediente(36):-
-                write().
+                write('Pao de Centeio').
 
+%fruta
 imprimeIngrediente(37):-
-                write().
-
+                write('Banana').
 
 imprimeIngrediente(38):-
-                write().
+                write('Laranja').
 
 imprimeIngrediente(39):-
-                write().
+                write('Pera').
 
 imprimeIngrediente(40):-
-                write().
+                write('Maca').
 
 imprimeIngrediente(41):-
-                write().
+                write('Kiwi').
 
 imprimeIngrediente(42):-
-                write().
+                write('Maca Cozida').
 
 imprimeIngrediente(43):-
-                write().
+                write('Maca Assada').
 
 imprimeIngrediente(44):-
-                write().
+                write('Pera Cozida').
 
+%doces
 imprimeIngrediente(45):-
-                write().
+                write('Arroz Doce').
 
 imprimeIngrediente(46):-
-                write().
+                write('Aletria').
+
 imprimeIngrediente(47):-
-                write().
+                write('Leite Creme').
 
 imprimeIngrediente(48):-
-                write().
+                write('Pudim').
 
 imprimeIngrediente(49):-
-                write().
+                write('Gelatina Vegetal').
 
 imprimeIngrediente(50):-
-                write().
+                write('Gelado de Leite').
 
 imprimeIngrediente(51):-
-                write().                             
+                write('Iogurte').                             
                            
                              
