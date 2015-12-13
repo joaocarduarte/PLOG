@@ -1,3 +1,18 @@
+imprimeDia(1) :-
+        write('Segunda Feira'),nl.
+
+imprimeDia(2) :-
+        write('Terca Feira'),nl.
+
+imprimeDia(3) :-
+        write('Quarta Feira'),nl.
+
+imprimeDia(4) :-
+        write('Quinta Feira'),nl.
+
+imprimeDia(5) :-
+        write('Sexta Feira'),nl.
+
 imprime([],Contador):-
         nl,
         write('Bebida:'),nl,
