@@ -4,6 +4,7 @@
 :- use_module(library(samsort)).
 
 :- include('config.pl').
+:- include('prints.pl').
 
 init :- 
         random(1, 3, Random),
@@ -18,9 +19,9 @@ init :-
         getListasIngredientes(ListaPrecos,ListaQuantidades),
         %updateQuantidades([1,2,3,4],ListaQuantidades,Result, 8),
         %write(Result).
-        pratos(1, Random,Doce,FrutaEspecial,Refeicoes,ListaPrecos,ListaQuantidades).
+        pratos(1, Random,Doce,FrutaEspecial,Refeicoes,ListaPrecos,ListaQuantidades,[]).
 
-pratos(Contador, PeixeCarne,EscolhaDoce, EscolhaFrutaEspecial,Refeicoes,ListaPrecos,ListaQuantidades) :-
+pratos(Contador, PeixeCarne,EscolhaDoce, EscolhaFrutaEspecial,Refeicoes,ListaPrecos,ListaQuantidades,PrecoTotal) :-
         Contador \= 6,
         EscolhaDoce = Contador,
         domain([EscolhaPeixeCarne],1,2),
@@ -36,12 +37,17 @@ pratos(Contador, PeixeCarne,EscolhaDoce, EscolhaFrutaEspecial,Refeicoes,ListaPre
         doce(ListaPrecos,Doce,PrecoDoce,ListaQuantidades,Refeicoes),
         Preco #= PrecoAcompanhamento + PrecoMain + PrecoPao + PrecoLegumes + PrecoFruta + PrecoDoce + PrecoBaseSopa + PrecoVerduraSopa,
         labeling([minimize(Preco)],Vars),
-        write(Vars),nl,
+        write('Dia '),
+        write(Contador),nl,nl,
+        imprime(Vars,0),nl,
+        write('Gastos(por pessoa): '),write(Preco),put_code(8364),nl,
+        write('------------------------------------'),nl,
         updateQuantidades([BaseSopa,VerduraSopa,PratoPrincipalMain],ListaQuantidades,Result,Refeicoes),
         Contador1 is Contador+1,
-        pratos(Contador1, EscolhaPeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrecos,Result).  
+        append(PrecoTotal,[Preco],PrecoTotal1),
+        pratos(Contador1, EscolhaPeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrecos,Result,PrecoTotal1).  
                                                 
-pratos(Contador, PeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrecos,ListaQuantidades) :-
+pratos(Contador, PeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrecos,ListaQuantidades,PrecoTotal) :-
         Contador \= 6,
         EscolhaFrutaEspecial = Contador,
         domain([EscolhaPeixeCarne],1,2),
@@ -57,13 +63,18 @@ pratos(Contador, PeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrec
         frutaEspecial(ListaPrecos,FrutaEspecial,PrecoFrutaEspecial,ListaQuantidades,Refeicoes),
         Preco #= PrecoAcompanhamento + PrecoMain + PrecoPao + PrecoLegumes + PrecoFruta + PrecoFrutaEspecial + PrecoBaseSopa + PrecoVerduraSopa,
         labeling([minimize(Preco)],Vars),
-        write(Vars),nl,
+        write('Dia '),
+        write(Contador),nl,nl,
+        imprime(Vars,0),nl,
+        write('Gastos(por pessoa): '),write(Preco),put_code(8364),nl,
+        write('------------------------------------'),nl,
         updateQuantidades([BaseSopa,VerduraSopa,PratoPrincipalMain],ListaQuantidades,Result,Refeicoes),
         Contador1 is Contador+1,
-        pratos(Contador1, EscolhaPeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrecos,Result).   
+        append(PrecoTotal,[Preco],PrecoTotal1),
+        pratos(Contador1, EscolhaPeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrecos,Result,PrecoTotal1).
 
 
-pratos(Contador, PeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrecos,ListaQuantidades) :-
+pratos(Contador, PeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrecos,ListaQuantidades,PrecoTotal) :-
         Contador \= 6,
         %EscolhaDoce = Contador,
         domain([EscolhaPeixeCarne],1,2),
@@ -79,13 +90,29 @@ pratos(Contador, PeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrec
         %doce(ListaPrecos,Doce,PrecoDoce,ListaQuantidades,Refeicoes),
         Preco #= PrecoAcompanhamento + PrecoMain + PrecoPao + PrecoLegumes + PrecoFruta + PrecoBaseSopa + PrecoVerduraSopa,
         labeling([minimize(Preco)],Vars),
-        write(Vars),nl,
+        write('Dia '),
+        write(Contador),nl,nl,
+        imprime(Vars,0),nl,
+        write('Gastos(por pessoa): '),write(Preco),put_code(8364),nl, 
+        write('------------------------------------'),nl,
         updateQuantidades([BaseSopa,VerduraSopa,PratoPrincipalMain],ListaQuantidades,Result,Refeicoes),
         Contador1 is Contador+1,
-        pratos(Contador1, EscolhaPeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrecos,Result).
+        append(PrecoTotal,[Preco],PrecoTotal1),
+        pratos(Contador1, EscolhaPeixeCarne,EscolhaDoce,EscolhaFrutaEspecial,Refeicoes,ListaPrecos,Result,PrecoTotal1).
+
+sumList([],0).
+sumList([X|Xrest], Sum) :-
+         sumList(Xrest, Sum1),
+         Sum is X + Sum1.
 
 
-pratos(6, Random, EscolhaDoce, EscolhaFrutaEspecial,Refeicoes,ListaPrecos,ListaQuantidades).
+pratos(6, Random, EscolhaDoce, EscolhaFrutaEspecial,Refeicoes,ListaPrecos,ListaQuantidades,PrecoTotal):-
+         write('Gastos na semana(por pessoa): '),
+         sumList(PrecoTotal,Total),
+         write(Total),put_code(8364),nl,
+         write('Total gastos na semana: '),
+         Total1 is Total*Refeicoes,
+         write(Total1),put_code(8364),nl.
         
 
 pratoPrincipalMain(ListaPrecos, Index, Preco, ListaQuantidades, Random,Refeicoes):-

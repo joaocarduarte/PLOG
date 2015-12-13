@@ -1,161 +1,211 @@
-%bases da sopa(batata pode ser utilizado como acompanhamento)
+imprime([],Contador):-
+        nl,
+        write('Bebida:'),nl,
+        write('- Agua'),nl.
+
+imprime([H|T],Contador) :-
+        Contador is 0,
+        write('Sopa: '),nl,
+        write('- '),
+        imprimeIngrediente(H),
+        Contador1 is Contador+1,
+        imprime(T,Contador1).
+
+imprime([H|T],Contador) :-
+        Contador is 2,nl,
+        write('Prato Principal: '),nl,
+        write('- '),
+        imprimeIngrediente(H),
+        Contador1 is Contador+1,
+        imprime(T,Contador1).
+
+imprime([H|T],Contador) :-
+        Contador is 4,nl,
+        write('Pao: '),nl,
+        write('- '),
+        imprimeIngrediente(H),
+        Contador1 is Contador+1,
+        imprime(T,Contador1).
+
+imprime([H|T],Contador) :-
+        Contador is 5,nl,
+        write('Salada: '),nl,
+        write('- '),
+        imprimeIngrediente(H),
+        Contador1 is Contador+1,
+        imprime(T,Contador1).
+
+imprime([H|T],Contador) :-
+        Contador is 8,nl,
+        write('Sobremesa: '),nl,
+        write('- '),
+        imprimeIngrediente(H),
+        Contador1 is Contador+1,
+        imprime(T,Contador1).
+
+imprime([H|T],Contador) :-
+        Contador1 is Contador+1,
+        write('- '),
+        imprimeIngrediente(H),
+        imprime(T,Contador1).
+
 imprimeIngrediente(1):-
-                write('Batata').
+                write('Batata'),nl.
 
 imprimeIngrediente(2):-
-                write('Favas').
+                write('Favas'),nl.
 
 imprimeIngrediente(3):-
-                write('Feijao').
+                write('Feijao'),nl.
 
 imprimeIngrediente(4):-
-                write('Grao').
+                write('Grao'),nl.
 
 imprimeIngrediente(5):-
-                write('Cenoura').
+                write('Cenoura'),nl.
 
 imprimeIngrediente(6):-
-                write('Curgete').
+                write('Curgete'),nl.
 
 imprimeIngrediente(7):-
-                write('Abobora').
+                write('Abobora'),nl.
 
 %legumes
 imprimeIngrediente(8):-
-                write('Alho Frances').
+                write('Alho Frances'),nl.
 
 imprimeIngrediente(9):-
-                write('Feijao Verde').
+                write('Feijao Verde'),nl.
 
 imprimeIngrediente(10):-
-                write('Espinafre').
+                write('Espinafre'),nl.
 
 imprimeIngrediente(11):-
-                write('Couve').
+                write('Couve'),nl.
 
 imprimeIngrediente(12):-
-                write('Broculo').
+                write('Broculo'),nl.
 
 imprimeIngrediente(13):-
-                write('Ervilhas').
+                write('Ervilhas'),nl.
 
 imprimeIngrediente(14):-
-                write('Tomate').
+                write('Tomate'),nl.
 
 imprimeIngrediente(15):-
-                write('Alface').
+                write('Alface'),nl.
 
 imprimeIngrediente(16):-
-                write('Cebola').
+                write('Cebola'),nl.
 
 imprimeIngrediente(17):-
-                write('Rucula').
+                write('Rucula'),nl.
 
 imprimeIngrediente(18):-
-                write('Milho').
+                write('Milho'),nl.
 
 imprimeIngrediente(19):-
-                write('Couve Roxa').
+                write('Couve Roxa'),nl.
 
 imprimeIngrediente(20):-
-                write('Beterraba').
+                write('Beterraba'),nl.
 
 imprimeIngrediente(21):-
-                write('Arroz').
+                write('Arroz'),nl.
 
 imprimeIngrediente(22):-
-                write('Massa').
+                write('Massa'),nl.
 
 imprimeIngrediente(23):-
-                write('Cuscuz').
+                write('Cuscuz'),nl.
 
 %carne
 imprimeIngrediente(24):-
-                write('Porco').
+                write('Porco'),nl.
 
 imprimeIngrediente(25):-
-                write('Frango').
+                write('Frango'),nl.
 
 imprimeIngrediente(26):-
-                write('Pato').
+                write('Pato'),nl.
 
 imprimeIngrediente(27):-
-                write('Peru').
+                write('Peru'),nl.
 
 imprimeIngrediente(28):-
-                write('Vitela').
+                write('Vitela'),nl.
 
 %peixe
 imprimeIngrediente(29):-
-                write('Carapau').
+                write('Carapau'),nl.
 
 imprimeIngrediente(30):-
-                write('Salmao').
+                write('Salmao'),nl.
 
 imprimeIngrediente(31):-
-                write('Pescada').
+                write('Pescada'),nl.
 
 imprimeIngrediente(32):-
-                write('Dourada').
+                write('Dourada'),nl.
 
 imprimeIngrediente(33):-
-                write('Solha').
+                write('Solha'),nl.
 
 %pao
 imprimeIngrediente(34):-
-                write('Pao de Mistura').
+                write('Pao de Mistura'),nl.
 
 imprimeIngrediente(35):-
-                write('Pao de Trigo').
+                write('Pao de Trigo'),nl.
 
 imprimeIngrediente(36):-
-                write('Pao de Centeio').
+                write('Pao de Centeio'),nl.
 
 %fruta
 imprimeIngrediente(37):-
-                write('Banana').
+                write('Banana'),nl.
 
 imprimeIngrediente(38):-
-                write('Laranja').
+                write('Laranja'),nl.
 
 imprimeIngrediente(39):-
-                write('Pera').
+                write('Pera'),nl.
 
 imprimeIngrediente(40):-
-                write('Maca').
+                write('Maca'),nl.
 
 imprimeIngrediente(41):-
-                write('Kiwi').
+                write('Kiwi'),nl.
 
 imprimeIngrediente(42):-
-                write('Maca Cozida').
+                write('Maca Cozida'),nl.
 
 imprimeIngrediente(43):-
-                write('Maca Assada').
+                write('Maca Assada'),nl.
 
 imprimeIngrediente(44):-
-                write('Pera Cozida').
+                write('Pera Cozida'),nl.
 
 %doces
 imprimeIngrediente(45):-
-                write('Arroz Doce').
+                write('Arroz Doce'),nl.
 
 imprimeIngrediente(46):-
-                write('Aletria').
+                write('Aletria'),nl.
 
 imprimeIngrediente(47):-
-                write('Leite Creme').
+                write('Leite Creme'),nl.
 
 imprimeIngrediente(48):-
-                write('Pudim').
+                write('Pudim'),nl.
 
 imprimeIngrediente(49):-
-                write('Gelatina Vegetal').
+                write('Gelatina Vegetal'),nl.
 
 imprimeIngrediente(50):-
-                write('Gelado de Leite').
+                write('Gelado de Leite'),nl.
 
 imprimeIngrediente(51):-
-                write('Iogurte').                             
+                write('Iogurte'),nl.                            
                            
                              
